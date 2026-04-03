@@ -22,7 +22,6 @@ body {
   font-size: 14px;
   color: #888;
   margin-bottom: 25px;
-  line-height: 1.5;
   text-align: center;
 }
 
@@ -38,55 +37,95 @@ form {
   margin-bottom: 15px;
 }
 
+.form-group:last-of-type {
+  margin-bottom: 25px; /* فاصله قبل دکمه */
+}
+
 label {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #333;
 }
 
 input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  outline: none;
-  transition: 0.2s;
-  box-sizing: border-box;
+  border: 1px solid #ccc;
 }
 
-input:focus {
-  border-color: #4cafef;
-}
-
-.button {
-  background-color: #00bfa6;
+button {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 8px 20px;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin: 0 auto; /* وسط کردن */
+}
+
+/* 🔥 دکمه جدید */
+.button2 {
+  display: block;
+  margin: 0 auto;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
   cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: 0.4s;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
-.button:hover {
-  background-color: #009e8a;
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-.button:active {
-  background-color: #87dbd0;
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  border-radius: 50%;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #fff;
+  border: 1px solid #009087;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: #009087;
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: #009087;
 }
 
 #message {
   margin-top: 15px;
   text-align: center;
-  font-size: 14px;
 }
