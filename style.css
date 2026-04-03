@@ -59,7 +59,7 @@ input:focus {
   border-color: #4cafef;
 }
 
-.btn {
+.button {
   background-color: #00bfa6;
   display: block;
   margin-left: auto;
@@ -77,11 +77,11 @@ input:focus {
   transition: 0.4s;
 }
 
-.btn:hover {
+.button:hover {
   background-color: #009e8a;
 }
 
-.btn:active {
+.button:active {
   background-color: #87dbd0;
 }
 
