@@ -16,7 +16,7 @@ function loginForm() {
     const data = { identifier, password };
 
     try {
-      const response = await fetch("https://login-app-9ceq.onrender.com/login", {
+      const response = await fetch("/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
