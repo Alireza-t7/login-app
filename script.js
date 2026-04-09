@@ -5,8 +5,8 @@ function loginForm() {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const identifier = document.querySelector("#identifier").value;
-    const password = document.querySelector("#password").value;
+    const identifier = document.querySelector("#identifier").value.trim();
+    const password = document.querySelector("#password").value.trim();
 
     if (!identifier || !password) {
       message.textContent = "Fill all fields";
@@ -19,9 +19,9 @@ function loginForm() {
       const response = await fetch("/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       });
 
       const result = await response.text();
